@@ -1,13 +1,18 @@
 package com.fintrack.common;
 
+import com.fintrack.auth.Role;
+import com.fintrack.auth.User;
 import com.fintrack.auth.UserRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
@@ -67,12 +72,6 @@ class GlobalExceptionHandler {
 }
 
 // ── Data Initializer ──────────────────────────────────────────────────────────
-import com.fintrack.auth.Role;
-import com.fintrack.auth.User;
-import org.springframework.boot.CommandLineRunner;
-import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.stereotype.Component;
-
 @Component
 @RequiredArgsConstructor
 class DataInitializer implements CommandLineRunner {
